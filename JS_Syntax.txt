@@ -1,0 +1,12 @@
+res. write --> write allow us to send multiple peaces of data, but in the end we need to res.send() to send all the written data
+
+res.sendFile()--> we could send our html isnted of writing write and send but also we need to creat new html files to each condition
+
+what we need is templates to modife one html file on a different conditions
+In order to do add a post from app.js to the ejs file , we need to use a tag called <%=EJS  %> allows us to put our output into the ejs file 
+res.render("nameEJS",{key:value} --> JavaScript Syntax 
+<% "Scriptlet" tag , allow us to control -flow  code js no outputs and on each part that it is not html we nedo to put this tag. running code in our template
+
+to know the value of an input in jv var operando = document.formname.elementName.value
+////////////////////////////PARSER/////////////////////////////////
+	To acces a data like an input you need to encoded parser and then put on post  request.body.nameInputo
