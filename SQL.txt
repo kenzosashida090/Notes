@@ -1,0 +1,117 @@
+SQL stands for structured query langauge and NOSQL not only structured query language
+
+The structure of SQL automaticly it will send null wen a data dosent exist relational data bases
+In SQL we can create relationship tables that for exampple we cans et a table costumers with a table with the product that he is buying and the Orders
+each of this tables can be related. with the customer ID. Have a related point.
+
+
+No SQL will creat an key value if it  doesnt exist while SQL no. NoSQL is more flexible no relational data bases.
+In NoSQL we need to think how we organize our data
+
+If we need store data like order products inventory  thinks that have relationship between each other. SQL
+
+If we have a website like one to many kind of relathionship like a instagram account that create one user and post many things is more NOSQL
+
+NoSQL Scalability really strong point against SQL in SQL when the rows or data increase the memory also increase and it will use alot of space and will struggle to manage data.  our  data will be distributed  beacause of the structure of the NosSQL
+
+MYSQL More mature , table structure requires a schema, more fdaster with relationships, scales vertically
+
+MongoDB Documment Structure its new but innestable more flexible to changes no great with complex relationship hroizontally scalable
+
+Structure Querty Language
+
+In data base we Creat Read Update Destroy
+
+To create a TABLE in SQL we CREATE TABLE nameoftable(
+	id INT NOT NULL, this means taht id cant be null it will be require  to fill the table
+	name STRING
+	price MONEY its a type of data that its specifis to manage money
+	PRIMARY KEY (id) this will set that the most important and require item 
+	
+)
+
+To insert data to our table
+
+INSERT INTO nameoftable
+VALUES () 
+
+Will use this when we want to add to all the colums data
+
+To isnert data to a column specifie 
+
+INSERT INTO nameoftable (the names of the column)
+VALUES(the values of each column specifie)
+
+SELECT * FROM products ----------> *  means everything
+If you want to select a specific column with jus erasing the * to the name of the columns for example......... SELECT name,price FROM products. 
+
+
+To select a specific data the you need to write:
+SELECT  * FROM products WHERE id=1
+
+
+To update data whe need to write
+
+UPDATE products 
+SET price = 0.80 
+WHERE id = 2
+
+Whe need to specifi in wich row we want to update the data otherwise it will update all the table with that value whe need to specifie WHERE
+
+To add a column to our table we need to write : 
+
+ALTER TABLE nameofTable
+ADD stock INT
+
+To delete statement 
+
+DELETE FROM table_name
+WHERE id = 2
+
+/////////////////////////////////////UNDERSTANDING RELATIONSHIP  SQL/////////////////////////////////////
+
+Foreign key link our tables stablish the relationship link link two tables together
+
+we create our table that we want to link up and then we set our values like id order_number, etc. including our foreign values like customer_id and product_id
+also we need to specifie what type of data is.
+
+and then finally we set our FOREING KEY (The foreign namee that we set in our new table for example product_id), REFERENCES the table that we are referencing
+(the name of that value on that table  for example id)
+
+SYNTAX 
+
+CREATE TABLE orders (
+	id INT NOT NULL,
+	order_number INT,
+	customer_id INT,
+	product_id INT,
+	PRIMARY KEY (id)
+	FOREIGN KEY (customer_id) REFERENCES customers(id),
+	FOREIGN KEY (produc_id) REFERENCES products(id)
+
+							)
+
+To create a record table we insert values to the table orders the foreign keys we are gonna set the value from the id customer that we want like Angela or,
+John that has an id of 1 and 2 , with that id we can link up to our record table
+
+INSERT VALUES recordTable 
+VALUES (1,4632,1,2)
+
+To link our tables we use INNER in this case we use inner join there are other inner joins .
+
+The inner join keyword selects records that have matching values in both tables
+
+      | Record table    |   customers table    |   customers table | customers table |
+SELECT orders.order_number, customers.first_name, customers.last_name,customers.adress
+FROM orders
+INNER JOIN customers on orders.customer_id = customers.id
+
+
+To join three tables 
+SELECT orders.order_number, products.name,products.price, products.stock,customers.last_name,customers.adress
+FROM orders
+INNER JOIN products on orders.product_id = products.id
+INNER JOIN customers ON orders.customer_id = customers.id
+
+THE FIRST THING WHEN WE WANT TO LEARN SOME DATABASE SYSTEM WE NEED TO KNOW HOW TO PERFORM CRUD OPERATIONS
+

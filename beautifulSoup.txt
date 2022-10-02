@@ -1,0 +1,10 @@
+beautiful soup pull out html elements that we are intrested in.
+we initialize an object soup with the BeautifulSoup Class then in the argument it will be the html content the file that we open with open ("website.html") as file: and the html.parser as a second argument that we can read this html file. but the best way is to use a lxml  and we need to import lxml:
+we can acces to for example title with soup.title. to get the string soup.title.string if we want search all certain tags like ancherags  soup.find_all("Tag that you want to search") and to hold the text well need a for loop to access all the tags and get the text tag.getText().
+
+To get the attribute for example the link href only we need to tag.get("href") if we want to access by an id we put soup.find("h1",id = "name ) and if we want to look for a class insted of class we add an underline soup.find("h1",class_ = "name" )
+
+To select a selector we need to soup.select_one(selector = "p a") the a tag that its inside a paragraph
+
+//////////////////////////////////////////////////////////SCRAPING A LIVE WEBSITE/////////////////////////////////////////////
+Request Allows us to get hold the data from a particular url

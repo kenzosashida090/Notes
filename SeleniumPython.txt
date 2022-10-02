@@ -1,0 +1,29 @@
+With Selenium we can interact with a browser we can authomatize, like filling forms
+
+to use selenium we set the next line of code:
+
+frm selenium import webdriver
+
+the chrome driver will allows use to interact with in this case chrome because its a chrome driver
+bt this driver Selenium will know how to operate
+
+To hold a web page we need to write : 
+
+driver.get("https://www.amazon.com")
+
+Due new updates from selenium we need to tab the next code text:
+
+from selenium import  webdriver
+from selenium.webdriver.common.by import By
+
+find element by name its the most used in programming when it comes when we fill forms.
+
+if we need to fined some elements that doesent have any classes or id like an anchor tag  we could use find element by css
+which we put the father and child selector like 
+
+("div class name a")
+
+we will found that a by entering to the div class and then search for the ancher tag
+
+find element by xpath is the most precise function to find a element onlyu we have to go to the element that we want to search
+and then we insepct and we click right and we select xpath cpy 

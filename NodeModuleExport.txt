@@ -1,0 +1,12 @@
+We can use modules when our program its getting  complex , export some data like a date, craeting another js which we store our module and with expor.module() we exports what ever we wants from this module like the date to use it in our main.js
+We store our module in our main.js with a require const date = require(__dirname + "/date.js")
+
+If we want to export more than one data we could create an object to export the function that we want for example:
+
+				module exports.getDate = getDate;
+
+				on our main.js
+
+				const date = require(__dirname + "/date.js")
+
+				let day =date.getDate();

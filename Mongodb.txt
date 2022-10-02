@@ -1,0 +1,86 @@
+Mongo shell is basically just a way for us to be able to interact with our MongoDB databases on our local system using command line
+
+Collection are similar to tables in SQL. They are a collection of documents and a document is simply just a single data record, so that would be 
+a single row if you were using SQL based database
+
+to set a new database we write:
+
+use nameofDatabase
+
+to add a collection
+
+db.nameofCollection.insertOne({name:"dasdas",age:21,etc})
+or
+db.nameofCollection.insertMany({""})
+
+to vitualize all the collections we write
+
+db.products.find()
+
+but if you want to find a particular data we need to use query like:
+
+$eq  Matches values that are equal to a specified value
+
+$gt Matches values that are greater than a specified value
+
+$gte Matches values that are greater than or equual to a specified value.
+
+$in Matches any of the values specified in an array
+
+$lt Matches values taht are less than a specified value
+
+$lte Matches values that are less than or equial to a specified value
+
+$ne Matches all the values that are not equal to a specified value
+
+$nin Matches none of the values specified in an array
+
+to search a specified data 
+
+
+shopDB> db.products.find({price :{$gt:1}})
+
+
+to get only returned a specific data we use logic 1 true 0 false
+
+db.products.find({_id:1}, {name:1,_id:0})
+
+what that syntax says is that we want to search the data with id 1 and get return the name but the id by default also return so we specifie that
+we dont want the id.
+
+that second  parameter is what we call our projection.
+
+
+////////////////////////////////UPDATE//////////////////////////////////////////
+
+db.products.updateOne({_id:1}, {$set: {stock: 32}})
+
+search that id =1 and then we are going to set another collection called stock that has 32 
+
+db.products.deleteOne()
+
+to make relationships like an array like:
+db.products.insertOne(
+{
+_id:3,
+name: "Rubber",
+price: 1.30,
+stock: 43,
+reviews: [{
+	autorName:"Sally",
+	raing: 5,
+	review:"Best rubber ever!"
+},
+{
+	 autorName:"Kenzo",
+	 raing: fuchi,                                                                                                                
+	 review:"No!"  
+
+}
+]
+We can say that we have a single document we say that have one to many kind of relationships one product could have many reviews
+
+we we crate a node app and need to connect to a mongoDB database there is two ways to handle this:
+-Use mongodb native driver
+
+-Use ODM Mongoose ---> this is the most popular 
