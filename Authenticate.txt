@@ -1,0 +1,57 @@
+Authentication is how secure its your website
+
+We have the password the key that wil encrypt the password and then the result, if you know the key you can know what the password is.
+
+Hashing will take away that encryption key for more security. The hash add complexity to our encryption.
+
+
+When the password its store on the database will stored as a hash function and when the user tries to log in the wil hash the password that he submit and compares to the password sotres at the database.
+
+Salting will add more complexity to our encryptiions because before hasing the password the salting it adding some nuimbers to the actuall password to make it more complicated to decode.
+
+with bcrypt Hashes we could add more security because on md5 with a good gpu we could generate 20 billions of hashes while in bycrypt only 17 thousand.
+
+
+express-session:
+
+const session = require('express-session')
+const passport = require("passport")
+const passportLocalMongoose = require("passport-local-mongoose")  
+
+its important the posisaiton on where we put the session
+
+Serialise store datga into the cookie
+
+deserialise will decode the cookie and decover the data that is inside.
+
+if we reset our server the cookies will be destroy and no longer will be authenticate.
+
+OAuth ---> Open Authorisation. Open standard token Authorisation
+
+With OAuth we able to acces peaces of information on this third party website like friends on facebook or contacts on gmail
+
+Managing password security with ciompanies like facebook or google they make all the security job if we use OAuth to log in on the users facebook account
+or gmail.
+
+1. Granular Acces Levels: Means what kind of data do we want to acces like on facebook such as the friends of the user or his email account
+this will allow us to acces specific data.
+
+2. Read only / Read+Write Access. 
+3. Revoke access.
+
+Steps to ger OAuth:
+
+Step 1- Set up  your app on facebook or gmail . on our developer console, and in return we get an app id or client id. 
+Step 2 - Redirect to Authenticate.// Redirect to facebook login or gmail or whatever the fuck you want. 
+Step 3 - User Logs in on facebook or gmail.
+Step 4- User Grants Permissions. Permision to get email adress or profile.
+Step 5- Receive Authorisation code. The user succesfully log in on facebook 
+step 6 - Exchange the authenticacionCode for Access Token. The Auth Code its like a ticket abd Acces Token its like a year pass you can get acces
+to the information
+
+The Auth Code its more like to authenticate user to login into facebook
+
+And Acces token we will use to acces to his data like his friends list.
+
+
+With passport the req.user it will return de current user id to post.

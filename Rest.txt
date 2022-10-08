@@ -1,0 +1,25 @@
+Representational State Transfeir
+
+Client makes a request to de server its done trhou a http request
+
+The API is the menu that the server can response.
+
+REST its an arquitectural style for designi apis
+
+the verbs of http request are:
+-get ---> Read. Serve up, send the result back and the request involve somethin reelated to our database so its searching for data. 
+-post--> Create the saved data it will contain the data and the response will simply be succes or the state.
+-put--> Update our database replace the old .
+-patch--> update our database or just replace some specific data.
+-delete.--> Delete.
+
+
+///////////////////////////////////////////////////////////////////////////////TO CREATE A SERVER////////////////////////////////////////////////////
+-Create a new directory called " " 
+- Initialise NPM and install boy-parser, mongoose,ejs and express
+-Create a new file called app.js
+-Inside app.js add server code("WRITE/COPY")
+-Setup MongoDB:
+	-DB name is wikiDB
+	-Colecction name is articles
+	-Document has 2 fields: title and content.
