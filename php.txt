@@ -1,0 +1,333 @@
+Runs in the server but the output comes into the browser
+
+//////////////////////////////////////////////VARIABLES NAMES/////////////////////////////////////////////////
+
+Start with dollar signs ($) 
+
+" "  ' ' are not the same 
+
+with double quotes you can put variables into a string
+
+with a single quotes its more simple and only we can put strings.
+
+Use more single quotes than doble.
+
+
+On object orientation "+" instead of "."
+
+
+/////////////////////////////////////////////////OUTPUT///////////////////////////////////////////////////
+
+echo without parenthesis, ti accepts multiple parameters.
+$x = "15" + 27;
+echo $x;
+
+echo $x,"\n";
+
+print is a function only one parameter but parethesis are optional so it can look like a language construct.
+
+print $x;
+print "\n";
+print($x);
+print("\n);
+
+////////////////////////////TERNARY/////////////////////////////////////////////
+
+It allows conditional expressions. It is like a one-line if-then-else. Like all "contraction" syntaces, we use it carefully.
+
+$www = 123;
+
+%msg = $www > 100 ? "Large " : "Small";   // 123 its grater than 100 if its true print Large if its false print Small
+echo "First: $msg \n";
+
+concatination $g = "sam " . 25;  the dot its the concatination 
+
+echo " g: $g\n";
+
+g: sam25
+
+the concatenation operator tries to convert its operands to string, TRUE becomes an integer 1 and then becomes a string. False
+it "not there" it is even "smaller" than zero. At least when it comes to width.
+
+echo "A".FALSE."B\n";
+echo "x".TRUE."Y\n";
+for($i=1;$i<=600;$i++){
+        if($i == 5) break;
+        echo "Count: $i\n";
+}
+output AB
+output x1Y
+
+///////////////////////////////////////////////////////////
+strpos - the position of a string
+
+$vv = "Hello world!";
+
+if(strpos($vv,"He") == FALSE) echho "Wrong A"
+
+== ---> It will change False to an integer 0 
+
+Breaking Out of a Loop
+
+The brake statement ends the current loop and jumps to the statement immediately following the loop 
+
+for($i=1;$i<=600;$i++){
+	if($i == 5) break;
+	echo "Count: $i\n";
+}
+echo "Done\n";
+Output
+
+count: 1
+count:2
+
+count:3
+count:4
+Done
+
+Finishing an iteration with continue :
+
+The continue statement ends the current iteration and jumps to the top of the loop and starts the next iteration
+
+for($i=1;$i<=10;$i++){
+        if(($i % 2) == 0 ) continue;
+	        echo "Count: $i\n";
+		}
+Output
+
+count: 1
+count:3
+count:5
+count:7
+count:9
+Done
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+PHP Arrays
+
+PHP arrays have all the benefits of Python Dictionaries but they can also maintain the order of the items in the array.
+Can be key => value or simply indexed by numbers
+
+<$php
+	$stuff = array("Hi","There");
+	echo $stuff[1], "\n";
+	?>
+Output: There 
+
+<?php
+	$stuff = array("name" => "Chuck",
+			"course" => "WA4E");
+	echo $stuff["course"],"\n";
+
+	?>
+
+	OUTPUT
+	WA4E
+The function print_r() shows PHP data - it is good for debugging
+<?php
+	$stuff = array("name" => "Chuck",
+	               "course" => "WA4E");
+echo("<pre>\n");/////THIS WILL STYLE THE OUTPUT TO GET A BETTER VIEW OF AN ARRAY
+
+echo $stuff["course"],"\n";
+
+echo("\n<pre>\n");
+	DUMPING AN ARRAY
+
+<?php
+	$stuff = array();
+	$sutff[2] = "Hello";
+	$stuff[9] = "World";
+	print_r($stuff);
+	$>
+output
+	Array
+	(
+		[2] => Chuck
+		[9] => S1664
+	)
+var_dump() its like print_r() but it will show more details about the array, also var dumbp can show us the false statement while
+print_r () will not show False statement
+
+<?php
+	$thing = FALSE;
+	echo("One\n")
+	print_r($thing);
+	echo("Two\n");
+	var_dump($thing);
+	?>
+	OUTPUT
+	one
+	two
+	bool(false)
+?>
+
+Also we can appends a value at the same time using empty square braces [] on the right hand side of an assignment statement
+
+$va = array();
+$va[] = "hello";
+$va[] = "world";
+print_r($va)
+	output
+	Array (
+		[0] =>hello	
+		[1] => world
+	)
+
+////////////////////////LOOPING THROUGH AN ARRAY ////////////////////////////
+<?php
+
+	$stuff = array("name" => "Chuck",
+			"course" => "SI664");
+	foreach($stuff as $k => $v ){
+		echo "Key=",$k,"Val=",$v,"\n";
+
+	}	
+?>
+		OUTPUT
+		Key=name Val=Chuck
+		Keu=course VAL=SI664
+
+WITH A INDEX ARRAY 
+
+<?php 
+	$stuff = array("Chuck","SI664");
+	foreach($stuff as $k => $v){
+		echo "Key=",$k, " Val=",$v,"\n";
+
+	}
+	?>
+	OUTPUT
+	Key=0	Val=Chuck	
+	Key=1 	Val=SI664
+
+////////////////////////////////////////////ARRAY FUNCTIONS////////////////////////////////////////
+
+-array_key_exists($key,$ar) -Returns TRUE if key is set in the array.
+-isset($ar["key"]) - Returns TRUE if key is set in the array
+-count($ar)- How many elements in an array.
+-is_array($ar) - Returns TRUE if a variable is an array
+-sort($ar) - sorts the arrat values (loses key)
+-ksort($ar) - sorts the array by key
+-asort($ar)-Sorts array by value,keeping key association
+-shuffle($ar)-Shuffles the array into random order
+
+instead of using isset we could ad ?? that it will returns the first operand if its true and if it not exists returns null; 
+otherwise it returns its second operand
+
+<?php
+	$username = $_GET["user"] ?? 'nobody';
+	Rather than:
+	$username = $_GET["user"] ? $_GET["user"] : 'nobody';
+
+	?>
+$za = array();					
+$za["name"] = "Chuck";
+$za["course"] = "WA4E";				Array(
+							[0] => Chuck
+							[1] => WA4E
+							[2]=>PHP
+$za["topic"] = "PHP";					)
+print_r($za);
+sort($za);
+print_r($za);
+
+      Array(
+                      [name]=> Chuck
+		      [course]=>WA4E
+		      [topic]=> PHP
+
+		      )
+														                                                              [topic]=>PHP
+Array(
+                [0] => Chuck
+		[1] => WA4E
+	        [2]=>PHP
+		)
+
+		)
+//////////////////////////////////////////Arrays and URL parameters/////////////////////////////////
+http://www.wa4e.com/code/arrays/get-01.php?x=2&y=4
+
+after the question mark it will generate  a global array variable called $_GET array that contents all the key and values that 
+gave them after the ?
+EXAMPLE
+
+<h1>Contents of the $_GET array</h1>
+<p> Using print_r:</p>
+<pre>
+
+<?php 
+	print_r($_GET);
+	?>
+</pre>
+
+OUTPUT 
+Using print_r:
+Array
+(
+	[x] =>2
+	[y] =>4
+
+
+)
+
+//////////////////////////////////////////////////OPTIONAL ARGUMENTS/////////////////////////////////////////
+
+-ARGUMENTS CAN HAVE DEFAULTS AND SO CAN BE OMITTED
+function howdy($lang=='es'){
+	if($lang=='es') return "Hola";
+	if($lang=='fr') return Bonjour;
+	return Hello;
+}
+print howdy(). " Glenn\n"
+print howdy('fr')." Sally\n";
+
+OUTPUT
+hola Glenn
+Bonjour Sally
+
+					CALL BY VALUE
+
+The argument variable within the function is an "alias" to the actual variable
+Its only a copy for the actual variable in the function call
+
+function doble($alias){
+	$alis = $alias *2;
+	return $alias;
+}
+$val = 10
+db_value = doble($val);
+echo " Value = $val Doubled:$db_value \n";
+
+OUTPUT 
+
+Value = 10 Doubled = 20
+					CALL BY REFERENCE 
+
+-Sometimes we want a function to change one of its arguments - so we indicate that an argument is "by reference" using (&)
+function triple (&$realthing){
+	$realthing = $realthing *3;
+}
+
+$val =10;
+triple($val);
+echo "Tripled = $val\n";
+OUTPUT tripled = 30
+
+					MISSING FUNCTIONS
+
+Sometimes will miss functions so if they dont exist we can create one
+if(function_exists("array_combine)){
+	// We dont do anything in here
+}else{
+	// We create the function
+}
+
+////////////////////////////////////////////////PHP GLOBAL VARIABLES/////////////////////////////////////
+
+-PHP interact with HTTP and HTML as easy as possible
+-PHP processes the incoming HTTP Request based on the protocol specifications and drops the data into various super gloabal
+variables (usually arrays)
+
+

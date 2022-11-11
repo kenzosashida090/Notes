@@ -1,0 +1,72 @@
+to access mysql write:
+mysql -u root -p
+--------------------------------------------------------
+Create USER:
+CREATE USER 'username'@localhost IDENTIFIED BY 'password'; 
+--------------------------------------------------------
+To create data base
+create db_name
+-------------------------------------------------------------
+To access all the users
+ SELECT User FROM mysql.user;
+--------------------------------------------------------
+To create a table we need first to create a db;
+Create a database 'school';
+--------------------------------------------------------
+To show databases:
+show databases;
+------------------------------------------------------
+To create a table:
+create table if not exists school_tbl(\
+    -> ID INT,
+    -> NAME VARCHAR(100)
+    -> );\
+--------------------------------------------------------
+To show tables: show tables;
+------------------------------------------------------
+To insert data into tables:
+ insert school_tbl\
+    -> values(1,'kenzo');
+------------------------------------------------------
+To see all the table :
+select * from school_tbl;
+--------------------------------------------------------
+Delete a table
+Drop table if exists table name;
+---------------------------------------------------------
+Create Table with ID as auto increment and set as a primary key
+
+ create table table_name (
+		-> id INT NOT NULL AUTO_INCREMENT,
+		->Name varchar(100) Not NULL,
+		->primary key (id)
+)
+
+T0 INSERT DATA WITH A PRIMARY KEY WE COULD SET WHICH COLUMNS ARE WE GOING TO SET.
+
+INSERT INTO table_name (name , age, height,etc...)
+	VALUES('kenzo',22,180,etc......);
+------------------------------------------------------------------------------------
+SQL QUERY
+
+SELECT * FROM table_name where columnName is not null;
+SELECT * FROM table_name where column Name LIKE pattern ORDER BY columnName;
+SELECT *FROM table_name where columnName LIKE pattern ; example LIKE '%J" 
+SELECT * FROM table_name where id=6; (with id si an example it could be another data )
+
+ANOTHER EXAMPLE TO ORDER BY NAME
+
+select * from emp_table order by Name; (by default is ascendint but we could add at the end desc 
+so the order will be from de last to the first);
+
+ANOTHER EXAMPLE TO GET DATA WHERE NAME STARTS WITH A
+select * from emp_table where Name like 'A%'
+
+-------------------------------------------------------------------------------------------------
+UPDATE
+				WHAT WE WANT TO CHANGE
+update table_name set 	Name= 'Kenzo,Sashida', Designation = 'IT DIRECTOR' where id=1;
+
+------------------------------------------------------------------------------------------------
+
+delete from table_name where id=1 (ITS AN EXAMPLE WHERE WE CAN FIND THIS APRTIOCULARR DATA)

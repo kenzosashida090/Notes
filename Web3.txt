@@ -1,0 +1,13 @@
+WEB 3 its about blockchain blochchain its like his names says its a serial blocks that contains any kind of data or coding program
+encrypted with hasing also have this ledges this conections that depends on the hash of the previus block.
+
+This is use more for securityu transactions money bitcoins etc.
+
+
+The ICP its a token that allow us to use to create a cycle that can be deploy on the internet but it costs alot.
+
+To create a new dfx que write : dfx new nameProject
+
+//////////////////////////////////////////// COINS VS TOKENS////////////////////////////////////////////////////////
+
+Coins require their own blockchain  but tokens can take advantage of an existing blockchain.

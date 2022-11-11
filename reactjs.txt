@@ -1,0 +1,178 @@
+A javascript library for biulding interfaces.i
+
+when a datra change on react, can spot the changes,  can refresh de websit without refreshing like loading new posts on facebook.
+
+Reacts works with creating JSX, JSX allow us to put some html code on js without the <%= %> ejs thing. the react module allow us to compile that html code into javascript code. Babel its that javascript compiler.
+
+JSX allows us to interact with html inside a js file inside that html module that  we create int js file we can also add js code into that html module.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+import React from "react"
+import ReactDOM from "react-dom"
+const name = "Kenzo"
+const number = 3
+ReactDOM.render(
+    <div>
+        <h1> My name is {name}</h1>
+	 <ul>
+		 <li>
+		     Kenzo
+		 </li>
+		 <li>
+			 Alejandro
+		 </li>
+		 <li>
+			 Sashida
+		 </li>
+		 </ul>
+		 <p> Mi lucky number is {number}</p>                                                          |
+ </div>,								                                      | 
+                                                                                                              |
+	document.getElementById("root")                                                                       |
+	 );												      |
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+ES6 template literals, inyecting strings on a javascript:<h1>Hello  {`${fname} ${lname}`} ! </h1>
+
+
+we could export the jsx files at the end of the file we write:
+export default nameFunction();
+
+And called it on the main.js using import nameFunction() from "./src/namefile.jsx"
+
+we can add some props to change data from the same style like some pictures we can creat the function that recieves an argument called props 
+
+inside the function que add propieties like 
+
+props.name
+props.age 
+
+etc.
+
+we could add propeties  that mostly repeats like email and phone, we have these two data just only we have to creat a component to add this two peaces of information
+
+we creat our jsx file, then the function 
+
+function email(props){
+
+	return(
+			<p>props.email</p>
+			<p>props.phone	</p>
+)
+
+}
+export default email
+Had to be the same name as the components that brings that info like email and phone
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Mapping its a javascript function useful for handling arrays
+function creat(singleItemArray){
+	return(
+
+		name = {singleItemArray.name}
+)
+}
+array.map(creat)
+
+map will loop thorugh an array and will return each item of that array and set it up into the function argument.
+
+/////////////////////////////////////////////////////////////ES6 MAP /FILTER /REDUCE////////////////////////////////////////////////////
+
+Map - Create a new
+
+
+/////////////////////////////////////////////////////////////ES6 ARROW//////////////////////////////////////////////////////////////////
+
+
+Arrow function is a shorter way to write a js function.
+
+const newNumber = numbers.map((x) => {
+	return x * x;
+});
+
+instead of writing an anonymous function we could just write the input of the funcion and an equal and the mor than key
+
+if its just returning this simple thing and with one input we could also write this syntax
+
+const newNumber = numbers.map( x => x*x);
+
+
+///////////////////////////////////////Ternary Operator/////////////////////////////////////////////
+
+Condition ? DO IF TRUE: DO IF FALSE
+
+				&& in JS
+
+in js the && when the first condition its evaluated and its not true automaticlly it will set false and dont even check the other condition
+like this
+
+			const x= 5
+
+			x>3 && x<7
+			true   true
+
+			const x=2
+			x>3 &&	x<7
+			false   
+
+	we could use this condition to render
+
+	like if the current time is grater than 12 will render something
+
+	currentTime >12 &&<h1> Why are you still working? </h1>
+	if this is true then will render this
+	if this is false then will no render this 
+//////////////////////////////////////////////////////////////////STATE IN REACT////////////////////////////////////////////////////////////
+
+UI = f(State)
+
+the user interface will be change by the State we consider like a function and State its the input that will cange the UI
+
+Declarative programming
+We declare how UI should look under different conditions
+
+Imperative Programming
+We use this when we programming javascript with document.getElement
+we get listeners and use function to change the UI thats imperative
+//////////////////////////////////////////////////////////////////React Hooks/////////////////////////////////////////////////////////
+Hook will re render , ractDOM its just a translate to html but its not html and need to render again to show updates, so we use Hook
+To use hook we need to set that inside a function component or a react .jsx file.
+
+we use the function useState() to get that update that we want to the values but it returns an array. To get a better coding and avoid any 
+confution we add a Destructuring.
+that return will have two items the initial state (value)  and the function
+
+Destructuring what will do is we can asign a number value for each item of the array for example:
+
+const [red,green,blue]=[0,132,227]
+
+this is an rgb color so for
+red =  0
+green = 132
+blue = 227
+EXAMPLE
+
+function App() {
+  const [count,setCount] = useState(0)
+    function increase(){
+          setCount( count +1)
+
+<h1>{count}</h1>
+ <button onClick={increase}>+</button>
+ This will increase +1 every time we click on the button, executes the function increase what contaions on  the function useState "setCount" the set 
+ count has the count value and we will increase by one.
+
+ This is a better way to update date with react using hook
+
+ /////////////////////////////////////HOOK VS CLASES/////////////////////////////////////////////////////
+hook is a better way to reduce our code instead of classes that need more lines of code and its more complex. 
+////////////////////////////////////////SPREAD OPERATOR//////////////////////////////////////////////////////
+
+The speread operator allow us to push an array inside another array for example
+
+const citrus = ["Lime", "Lemon", "Orange"];
+const fruits = ["apple","banana","coconut", ... citrus]
+
+the console will show this:
+
+["apple","banan","coconut","Lime","Lemon","Orange"]
+Also we could set thi on an object
