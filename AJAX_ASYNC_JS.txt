@@ -1,0 +1,60 @@
+SYNCHRONOUS
+
+-Synchronous code is executed line by line;
+
+-Each line of code waits for previous line to finish like the alert command, it will wait to set the okay button to continue the line of code.
+
+-Long-rrunning operations block code execution.
+
+--------------------------------------------------------------------------------------------------------------
+
+ASYNCHRONOUS
+
+-Aynchronous code is executed after a task that runs in the "background" finishes (in other words the rest of the code will be executed);
+
+-Asynchronous code is non-blocking;
+
+-Execution doesnt wait for an asynchronous task to finish its work;
+
+EXAMPLE
+
+const p = document.querySelector('.p');
+Asynchronous<---setTimeout(function(){
+	p.textContet = ' My name is Kenzo! ';
+},5000);
+p.style.color="red";
+
+Wil be executed after all other code.... 
+
+Callbacks does NOT automatically make code asynchronous!.
+/////////////////////////////////////////////////////////////////////////////
+
+EXAMPLE 2 
+
+const img - document.querySelector('.dog');
+img.src - 'dog.jpg'; --> this is asynchronous... once after the image loads will run the callback so it skips and first add tghe p.style.width = '300px';
+
+img.addEventListener('load', function() {
+	img.classList.add('fadeIn');
+});
+
+p.style.width = '300px';
+
+IMPORTANT! = addEventListener does not automatically make code asynchronous, what it is async it is the fact that the image it is loading at the background
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+AJAX 
+
+Asynchronous JavaScript And XML; Allows us to communicate with remote web servers in an asynchronous way. With AJAX calls, we can request data from web servers dynamically.
+
+The request qalso can be GET/POST/ETC. 
+
+We could deisgn an API that recives request from our front end pages.
+but for the best we can use ONline API or Web api that receives requests for data, and sends data back as response;
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+exercise ---> https://restcountries.com/v2/
+wher use JSON.parser() when we want tio cnvert that data into an object 
+///////////////////////////////////

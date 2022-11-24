@@ -1,0 +1,30 @@
+RESOLUTION SWITCHING -> DECREASE IMAGE RESOLUTION ON SMALLER SCREEN
+ <picture class="footer__logo">
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" 
+                        media="(max-width: 37.5em)"> we are setting that when it hits 600px will use the green small 1x
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" src="img/logo-green-2x.png 2x">
+
+            </picture>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+DENSITY SWITCHING  ->  HALF THE IMAGE RESOLUTION ON @1x scren 2x it si double the pixel to more high resolution  --> <img srcset="img/nat-1.jpg 300w , img/nat-1-large.jpg 1000w" this tell to the browser the width without downloading the images
+	sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" --> this 20vw and 30vw is the procentage of the sizes of the image when its small 
+
+ART DIRECTION - > IMAGE DETAILS WERE PERSERVED BUT THE IMAGE IS DIFFERENT 
+
+
+
+this is on html
+
+============================================================================================================================================================================================================================
+
+this is css
+the 192 it is the 2x equivalent on the mac 
+
+@media(min-resolution:192dpi) and (min-width: 600px){
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+        url("../img/hero.jpg");
+-----------------------------------------------------------------------------------> this is on the header,, with this if theresolution it is greater than 192pi and width 600px will excecute this code... we do this because the phone normally use 2x and the width 600px so we need a 1200 witdh so
+to not use more mb we use a 1x beacause it has more than 1200 but if this condition is greater will excecute the image 2x

@@ -1,0 +1,33 @@
+CSS BASE
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    position: relative;
+    line-height: 1.7;
+    box-sizing: border-box;
+    padding: 3rem;
+    background: linear-gradient(to right,#B9E0FF,#6C4AB6);
+
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+JQUERY 
+
+---> to change the text $("h1").text("BYE");.
+
+---> access to the attributes of the html elments[console.log($("h2").atrr("class))]
+
+--> add class to a html element [$("h1").addClass("className")]
+
+--> add a event listener [$("button").click(function(){
+					$("h2").css("color","red");
+						})]
+
+--> other way to use a event listener [$("button").on("nameEvenet",function(){$("h1").css("color","red")}]

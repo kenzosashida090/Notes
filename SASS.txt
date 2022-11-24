@@ -1,0 +1,119 @@
+Sass is a CSS preprocessor, an extension of CSS taht adds power and elegance to the basic language.
+
+-Variables: for reusable values such as colors,font-sizes,spacing,etc;
+
+-Nesting: to nest selector inside of one another, allowing us to write less code;
+
+-Operators: for mathematical operations right inside of CSS;
+
+-Partials and imports: to write CSS in different files and importing them all into one single file;
+
+-Mixins: to write reusable pieces of CSS code;
+
+-Function: similar to mixins ,with the difference that they produce a value tghat can be used.
+
+-Extends: to make different selector inherit declarations that are common to all of them;
+
+-Control directives: for writin complex code using conditionals.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-To set a new variable we use :
+$color-primary:red;
+
+and to use it inside an element:
+ body{
+	background-color: $color-primary;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+to have a nasted elements we need for example an ul that contains li we could nest this elements 
+
+<ul class="navigation>
+	<li><a href = # > about us </li>
+	<li><a href = # > contact us </li>
+	<li><a href = # > pricing</li>
+</ul>
+
+on SCSS
+
+.navigation{
+	list-style : none; // this allows us to get rid off the points 
+	
+	li{
+			display: inline-block;
+			margin-left : 30px;
+
+		&:first-child{
+				margin:0;	// we could nested even more so for example the first list item will no have margin-left
+						// instead of writing li nested in li we write & this will means .navigation li{} 
+}
+
+
+}
+
+}
+
+----------------------------------------------------------------------------------------------------------------
+@mixin nameVariable{style content} allows us to store code it is like a variable of a style. We use this when you want te same peace of code on differents elements.
+To call it just @mixin namevariable;
+With @mixin we can use arguments for example if we have the same line of code but in color change so using the argument we could call mixin like a function an set the color
+that we want.  @mixin()
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Extends allows us to store style that repeats, when we set our data style and set it on a class what happens its that that classes will replace the name of the placeholder %name
+so we are not calling a variable we are setting that classes into that placeholder on css it would look like this
+
+	.class1, .class2 {
+		color:red;
+}
+we not use this often  it is necessary when are very related classes.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+To compile sass we first npm init to initialize our npm, then install the package: npm i node-sass --save-dev
+then tho compile whe need to go to package.json and werite on  scripts : "compile:sass" : "node-sass sass/main.scss css/style.css -w" this flag -w stands fot watch of anu changes so we not need to compile each time that we change something
+
+then go to the terminal and write: npm run compile:sass
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+															WEB DESIGN RESPONSIVE
+
+1- FLUID LAYOUTS 
+		- To allow webpage toa dapt to the current viewport width( or even height)
+		-Use %(or vh /vh) unit instead of px for elemetns that should adapt to viewport (usually layout)
+		- use max-width isntead of width
+	
+
+
+2- RESPONSIVE UNITS
+		- Use rem unit isntead of px for most lengths
+		-To make it easy to scale the entire layout down (or up) automatically
+
+3- FLEXIBLE IMAGES
+		- By default, images dont scale automatically as we change the viewport,
+			so we need to fix that
+		- Always use % for image dimensions, together with the max-width property.
+
+4- MEDIA QUERIES
+		- To change CSS styles on certain viewport widths (called breakpoints).
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LAYOUT TYPES
+
+- FLOAT LAYOUTS
+- FLEXBOX. Modern way of laying out elements in a 1-dimensial row without using floats. Perfect for component layouts
+-CSS GRID. For laying out element in a fully-fledged 2-dimensional grid. Perfect for page layouts and complex components.
+------------------------------------------------------------------------------------------------------------------------------------------
+So max-width means is that if we have enough available space, then it will have the width that we specified but if there is not enough width,
+so basically if the viewport is smaller than width that we specified here, so in this case, if the viewport is smaller than 114 rem,
+then it will simply fill 100% of the available space that it has.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+To center block elements inside a block element we set 
+margin: 0 auto;
+
+float will set height 0 so we fix that with a variable called celarfix it is a pseudo after that get rid off that float and set the actual height.
+
+  [class^="col-"] --> This means ^= -> starts with "col-"
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

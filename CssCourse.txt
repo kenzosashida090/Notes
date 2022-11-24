@@ -1,0 +1,84 @@
+
+-box-sizing: border-box -> Allows us to manipulate a container box with the height and weight if we change one of this will change the padding, margin,etc. this is an easy way to edit a container.
+
+-font-family -> its a good practice to set it on the body
+------------------------------------------------------------------------
+-line-height => if we put 2 will be read as two times more than the default
+---------------------------------------------------------------------------------------
+-vh -> the viweport its how the user will see, if we set 100% it will cover all the page.
+----------------------------------------------------------------------------------------------
+-background-size: cover -> cover will  adapt to de viewport to fix in it
+------------------------------------------------------------------------------------------------------------
+- linear-gradient -> it will set at the background image, we firs set from to where it will go the colors (to right bottom, blue,yellow) ... it means it will start from the left blue to the bottom of the right with yellow.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clip-path = polygon() -> polygon(allows us to form a polygon with cordinates starting from the left-top size to the right
+for example                     X Y                      X   Y
+                polygon(        0 0             ,       100% 0 ,                      ,  100% 100% ,   0 100%)
+
+                        will start in this point , will go 100 x axes all the page, to the bottom right
+
+
+                                ALL OF THIS WILL FORM AN SQUARE IF WE WANT A TRIANGLE EQUILATERO
+                                polygon(0 0 , 100% 50%, 100% 50%, 0 100%);
+
+
+position>: relative -> will obey the normal flow document, if we move it orw what it calle offset will be based on the values on top
+right, left,bottom, of the css prestablish
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+position: absolute -> will not obey all the document flow, no space is created for the element in the page layout , whe can manipulate
+the top bottom rleft right, but the reference will be set on the body to set a reference where the position start will use relative.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+we can use span inside a h1 we use span to edit the text.
+---------------------------------------------------------------------------------------------------------
+keyframe -> its a sequence of an animation we can use this when we want to control the steps of an animation like at the beginning that is 0 will do this and when is 100% will do another thin. we could set at any porcentage of animation.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pseudo clases like ----> link <---- that its with an anchertag allows us so set that this is a link on css.
+
+And --->visited<---- is to say after got clicked the link it is also an pseudo class.
+
+also when we clicked we could add the pseudo class--> action <----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+transition animation it is an easy way than the @keyframe that we especifie each step of animation, duration,etc. In transition we could set all this parameters to affect al the class for example:
+
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+        text-decoration: none;
+            padding: 15px 40px;
+                display: inline-block;
+                    border-radius: 100px;
+                        transition: all .2s;  <-----
+                        }
+
+it will affect al the hover btn and active btn that we set after this initial state of the button.. ITS IMPORTANT TO SET THIS TRANSISION ON THE INITIALIZE CLASS  NOT IN THE HOVER NOR ACTIVE . this will set the duration of all this animations attached to the button.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+animation-fill-mode : backwards; this allow us to start all the settings that we animated before it started the sequence, for example
+
+if we want to set a hidden button before the animatiion starts this is a good option
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+We want to use rem beacause when we want to adapte to a phone or desktop it will be more easy to meadiquery the root value of the font size that what we remember
+rem will use the root value as reference.
+Instead of setting te root html{font-size:10px} beacause to people who has view problems this will not be a good practice so we use porcentage of the value of the default 
+browser that is 16px.  10/16 =0.625*100 = 62.5%
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+after and before aare pseudo elements that we create to set animation like the button create a after button to set animation
+
+wee need to specifie that we want to apply it will also apply to the pseudo elements thats what inherit like boxing size will set that in the body and inherit on the *{} so later
+we could change this setting into a specifie element.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<i> stands for italice we will use it on icons but i is not for icon it is for italices
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+& > * -> this means select the direct childs 
+---------------------------------------------------------------------------------------------------------
+
+background-image-blend-mode:screen --> this will blend between a color and an image 
+---------------------------------------------------------------------------------------------------------
+box-decoration-break:clone;  --> This will treath the cards text that its one parapgraph but in two mlines the padding will detect one element with this declaration will detect
+the 2 elements 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+shape-outside : cirlce (radius at where we want it) --> this allows us to get that effect circle around the text. also need to set as float
+to move a float the best way is using transform.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+object-fit: cover; will fill the parent element we use this to video

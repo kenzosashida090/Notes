@@ -1,0 +1,55 @@
+OOP JAVASCRIPT
+
+-OOP is programming paradigm based on the concept of objects 
+
+4 fundamental OOP principle
+
+-Abstraction --> Ignoring or hiding details that dont matter, allowing us to get an overview
+perspective of the thing we are implementing.
+
+-Encapsulation --> Keeping propeties and methods private inside the class, so they are not accessible 
+from outside the class. Some methods can be exposed as a public interface 
+
+-Inheritance --> When classes are to similar and related we can have one class inherit to another
+the child class extends parent class. Making all propeties and methos of a certain class avaible to a child class.
+The child will inherit the parent class . The child it is the more specific class..
+
+Methods are the variables.
+propeties are the functions
+
+-Polymorphism: A child class can overwrite  a method inherited from a parent class
+
+-Objects (instances) are instantiated from a class ,which functions like a bluprient
+
+- OOP IN JS : PROTOTYPES . Objects are linked to a prototype object;
+
+-Prototypal inheritance: The prototype contains methods (behavior) taht are accesible to all objects linked to that prototype.
+
+- Behavior is delegated to the linked prototype object.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+CRETING PROTOTYPES
+
+1- CONSTRUCTOR FUNCTIONS -> technique to create objects from a function;
+
+2- ES6 CLASSES ->Modern alternative, syntatic sugar, classes work exactly like constructor functions
+
+3- OBJECT.CREATE()-> easiest and most straightforward wa of linking an object a prototype object.
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+new happend 4 steps 
+
+// 1.New {} is creted.
+2. function is called, this = {} (this will point to the empty object).
+3. {} linked to prototype
+4. function automatically return {} 
+
+INSTANCE IT IS WHAT CREATE A CLASS LIKE AN OBJECT MATILDA,JONAS,ETC those object created are instance 
+---------------------------------------------------------------------------------------------------------------
+PROTOTYPE CHAIN IS THAT WHAT WE CALLE WHEN WE ACCES THE PROTOTYPES PROPETIES for example the species that we set if the person created (jonas) doesent have a propety or a method
+will search through all the linked prototypes in this case Person prototype will have this specie propety
+---------------------------------------------------------------------------------------------------------------
+if we console log the prototype of an array will print all the function that we have access into like fin, map, push all the functions that we can uso into an array.
+so in this case Array is the constructor of all the arrays 
+
+person.prottype it is an object and need a prototype

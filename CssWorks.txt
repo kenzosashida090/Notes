@@ -1,0 +1,177 @@
+THERE ARE 3 PILLARS THAT WE NEED TO FOLLOW.
+
+Responsive design : This is abaout that the website needs to adapt if its on  phone or a desktop or a laptop 
+   		-fluid layouts.
+		- media queries.
+		- responsive images
+		- correct units.
+		- desktop-first vs mobile-first.
+
+
+Maintainable and scalable code : This is about how we structure out class names, html,easy to understand,clea,ect.
+
+web performance : This is about how will perform our code to the user we need to use:
+
+		-less http request.
+		- less code.
+		-compress code.
+		- use css preprocessor (like sass)
+		- less images (the image will consume the most of the webpage so we need lees images)
+		-compress image
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+WHAT HAPPENS TO CSS WHEN WE LOAD UP A WEBPAGE?
+
+This first load the html and then ->  parse html (that means that decode all the html code) -> Document object Model (this is all the parents childs that have html) -----|
+								|																				  |			
+								v																				  |
+						while parse the html also will load the css  -> Parse CSS this will set all the scales	-> CSS Object Model (CSSOM)	--------------|
+														like if we are on a phone or desktop								  |
+																												  |
+																												  v
+							FINAL RENDERED
+							WEB PAGE			        <--------    WEBSITE RENDERING			<---	RENDER TREE		<-------------------------
+														THE VISUAL FORMATTING MODEL														
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+The cascade  (The "C" IN CSS) 
+	this part of the parse CSS will combine all the different stylesheets and resolving between the CSS RULES  and declarations, when more than one rule aplies to a certain element 	
+
+there is 3 differents that will set this declarations
+	-Author : This will be us all the declarations that we say like how the fonts size will be or the size or color 
+	- user : this will be set by the user 
+	- browser(user agent) : This will be set by default like the anchertag if we dont syle thios will be by default underline and with another color. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How the cascadian will resolve the problems will be 
+-Importance (!improtant) this is not recommended. use at last resource
+-Specifity  -> The inline style is what we style on our html but its not recommended as well, to be more specifie will be id ,classes
+		   if we have the same number of id, classes and elements what the page will select its the latest one that its the SOURCE ORDER
+-Source Order - > like i said before the last declaration wil override all the previpuse declarations and will be aplied.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+HOW CSS VALUES ARE PROCESSED
+		HTML											CSS
+	 example									
+												.section{ font_size:1.5rem;
+														width: 280px;
+														background-color:oranged;																}											
+	<div class="section>			
+
+		<p class= "amazing"> HELLO WORLD! </p>							}
+	</div> 						
+												p{  width: 140px;
+												background-color:green;}
+												
+												.amazing{ width:66%}
+
+In this particular case 
+-The width paragraph will be 66% of the 280px that we declare on the div. aprox (185px).
+-IF we dont declare any padding by default will be set 0px.
+-The font-size root by default it will be 16 px;.
+-The font-size of the section class its declare 1.5rem (all values like rem,vh,vw,etc) will be at the end computed.
+and converted into pixels so the conversion is (1.5 *16px) = 24px this conversion will be set at the computed value.
+-Then because the amazing class is a sibling of section div and in the div we declare the font size this will be inheritance
+and dont need to decalre the font size at this class paragraph.
+------------------------------------------------------------------------------------------------------------------------------------
+- Rach property has an initial value,used if nothing is declared.
+-Browsers specify a root font-suze for each page (16px).
+-Porcentage and relative values are always converted into pixels.
+-Porcentage are measured relative to their parent's font-size, if use to specify font-sixe; (if the parent declare 16px and his sibbling wants fonts-size
+of 150% will take 16 that 100% and add 50% of 16 that its  8 = 24px).
+-If we want to set lengths porcentage like padding will  be measured relative to their parents width.
+(if the parents width= 1000px  and set padding=10% will set 10% of 1000px it will be 100px of padding). 
+-em are measured relative to their parent font-size, if used to specify font-size; for example
+(Like the 4 step the parent set that the font size will be 150% = 24px and the sibbling set the font-size 
+as 3em then wil multiply  3*24 =72px).
+-em on lengths optherwise will apply to the current element font-size, not the parent.
+(if it is inside the class that set 150% =24px then will use this value that is the current element value 
+and multiply by 2 (2*24) =48px;). 
+
+-rem are always measured relative to the documents-root font-size normally  16px.
+
+-vh and vw are simply percentage measurments of the viewport's height and width. only the browser will no the values 
+and apply.
+						
+------------------------------------------------------------------------------------------------------------------------------------------------------------------									
+The visual formatting model 
+
+Algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree,
+in order to determine the final layout of the page.
+
+- Dimensions of boxes: te box model;
+- Box type: inline,block, inline-block;
+- positioning scheme: floats and posisitioning
+- statick contexts
+-other elements in the render tree;
+- viewport size, dimensions of images,etc.
+
+--------------------------------------------------------------------------------------------------------------------
+
+1.- THE BOX MODEL 
+
+-Content: text,images,etc
+-padding: transparent area around the content, inside of the box.
+- border: goes arround the padding and the content
+-margin:space between boxes
+-fill area: area that gets filled with background color or background image.
+--------------------------------------------------------------------------------------------------------------------
+the total width and height in a box model will be determinated by:
+total width = right border + right padding + specified width + left padding + left border
+total height = top border + top padding + specified height + bottom padding + bottom border
+
+This could be a real problem to calculate so to dont worry about the padding and only specified the width and height 
+we use box-sizing: border-box we dont think about the padding only the weight and heighy.
+-------------------------------------------------------------------------------------------------------------------------
+
+2. BOX TYPES
+
+-Block level boxes				-Inline-block					Inline boxes
+								boxes	
+-Box-model applies as showed.			-a mix of block and inline		-Content is distributed in lines
+-has a line break.				- occupies only contents space	-Occupies only contents space
+- 100%p of parent's width.			-no line-breaks				- No line-breaks
+							- box-model applies as showed.	-No heights and widths
+													-paddings and margins only horizontal
+														(left and right)
+
+------------------------------------------------------------------------------------------------------------------------
+Normal flow 							FLAOTS						ABSOLUTE
+-Default positioning scheme;			-Element is removed from the					POSITIONING
+-Not floated					 normal flow.						- Element is removed from the normal flow.
+-Not absolutely  positioned;
+- Elements laid out accotding 		-text and inline elements will wrap			- no impact on sourranding content or elements.
+to their source order.				 arround the floated element;				-We use top,bottom,left and right to offset
+(This represents that												  the element from its relatively positioned	
+it wont exist any positionuing		- The container will not adjust its height		container.
+and it will be a cascading 			  to the element.						- CSS ALSO SOLVE THIS PROBLEM OF NO IMPACT ON SOURRANDING stacking context
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CSS ARCHITECTURE
+
+Think -> This will be the layoput of our project think the modular building blocks .
+
+Build -> Using BEM (Block Element Modifier).
+
+.block{} its the whole coomponent that is meaningful on its own.
+
+.block__elelemnt{} as its name said  it is an element  part of a block that has no standlone maning.
+like an recipe we could set a block element to the recipe inf and recipe stats box for example. It will
+deppend on his conntent.
+
+.block__element--modifer{} it will be the components that we want to modify like the stats-value or the stast name 
+itself.
+	
+The architect it could be the 7-1 pattern
+7 different folders for partial Sass files, and 
+1 main Sass file to import all other files into
+a compiled CSS stylesheet.
+
+- base --> 
+-components -
+-layout
+-pages
+-themes
+-abstacts
+-vendors
+

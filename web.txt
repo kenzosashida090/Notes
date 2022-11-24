@@ -1,0 +1,65 @@
+ACCESSING A WEBPAGE 
+
+THE LINKS THAT WE KNOW WILL CONTAIN THE FOLLOWING STRUCTURE
+
+http://www.google.com/maps
+Protocol|Domain name|Resource
+(http or https)
+
+this is we say it is the way that we can access but to access to that server the dns will act dns stands for 
+domains name server like the phone books of a server, when we access to this links we will send a request to the
+DNS and the DNS will look for the actual ip adress of that webpage trohuh ISP.
+Once we have the real adress the tcp/ip socket connection is stablished between the browser and the server.
+kept alive for the entire time that takes to transfer the entire file of the page
+
+TCP = Transmition Control Protocol --> Break up the request and responses into thousands of small data and once the package arrives to the destination will reassemble  
+
+IP = Internet Protocol --> Send and route all this package it ensures that all of them arrive at the destination
+
+HTTP= Hyper Text Transfer Protocol
+
+After all the TCP/IP the client will send a HTTP Request
+
+
+The HTTP Request for example to get google maps will contain this data
+
+GET/ maps HTTP / 1.1 -> Start line: HTTP method + request target + HTTP version
+_________________________
+|Host: www.google.com	|
+User-Agent: Mozilla/5.0	|
+Accept-Language : en-US	|
+|				|
+<BODY>			|
+|_______________________|
+HTTPS -> it is encrypted
+
+HTTP RESPONSE
+______________________________
+| HTTP/1.1 200 OK            | --> HTTP version + status code + status message
+| Date: Fri, 18 Jan 2021     |
+| Content-Type: text/html    | --> HTTP response headers (many different possibilities)	
+| Transfer-Encoding: chunked |
+|<BODY>			     | --> RESPOSNE BODY (JSON{API},HTML)
+|____________________________|
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+STATIC VS DYNAMIC WEBSITES
+
+STATIC = Uploads the final website that contains html css and js an this will send to the browser,no work on the server side.
+
+-----------------------------------------------------------------------------------------------------------
+
+DYNAMIC = Contains a database and app that fetch that data  then build the website with a template that will help to build that website
+and then will create all the files like html css and js and finally will go to the browser . This process before getting to the
+browser it calls server-side rendering.
+This client side its also called server-side Rendered
+-------------------------------------------------------------------------
+API = Contains a database and app that fetch that data then that data it will sent into a json format and then send it to the browser
+that means that it not contains html,css or js files only the json data. that call building API
+
+then will get into the browser and fetch that data into a fancy building website such as react or angular also with a template
+this side is call as consuming API.
+
+We call Client-side rendered to the api
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
