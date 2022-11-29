@@ -1,0 +1,89 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				DISTANCIA FOCAL DE LA VISION HUMANA 
+
+distancia focal que forma una imagen dentro del ojo oscila entre los 22 y 24 mm.
+
+				UHD
+
+		RATIO 	16:9
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////
+
+
+In 1861 Scottish mathematical physicist James Clerk MaxwellOffsite Link produced the earliest color photograph,
+ an image of a tartan ribbonOffsite Link, by having it photographed three times through red, blue, 
+and yellow filters, then recombining the images into one color composite. 
+Because of this photograph Maxwell is credited as the founder of the theory of additive colorOffsite Link.
+
+talbot fue de los primeros en crear el relfex camera
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+								AUTOFOCUS
+
+l C35 AF utiliza esencialmente un telémetro de infrarrojos. Un solo conjunto de LED infrarrojos emite luz mientras que 
+dos sensores detectan la luz infrarroja que regresa de una escena y producen un voltaje. Cuando se mueve el sensor del 
+telémetro, esto producirá una curva de voltaje que se comparará con el otro sensor infrarrojo estático. La correlación 
+más alta será cuando el telémetro esté correctamente alineado y se envíe una señal a la lente para el enfoque. 
+El mecanismo de enfoque de la lente es igual de complicado, pero con eso en mente, puede ver por qué se trata 
+de una increíble hazaña de ingeniería tanto para Honeywell como para Konica.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+								PRIMERA web cam
+
+3 cuadros por minuto.
+
+frame grabber
+
+protocolo x windows
+
+En cuanto al principio de funcionamiento de las cámaras CCD, estas cámaras de video 
+capturan una imagen y la transfieren al sistema de memoria de la cámara para registrarla 
+como datos electrónicos. 
+El principal logro de las cámaras CCD es la producción de imágenes de calidad sin distorsión alguna. Básicamente, 
+la cámara convierte la luz en electricidad. Una cámara CCD forma elementos sensibles a la luz llamados píxeles 
+que se ubican uno al lado del otro y forman una imagen particular. Las cámaras CCD han estado en producción durante 
+un largo período de tiempo y tienden a tener píxeles de alta calidad 
+que producen una imagen de mayor calidad y bajo ruido que cualquier otra cámara.
+
+Así fue como las imágenes de la cafetera en escala de grises de 129 x 129 píxeles, 
+a 1 fotograma por segundo llegó a los escritorios de los usuarios de la red del laboratorio.
+
+3 frames por minuto
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+QuickCam fue desarrollada en 1994 por Connectix anos mas tardes la compraria logitech, CU-SeeMe, estaba solo 
+dispobnible an Apple Macintosh, y su conexion era puerto serial, producia 16 sombras de gris a una resolution de 
+320x240 pixeles, y grababa a 15 fps, modo parallelo 4 bpp greyscale
+
+
+
+profundidad del píxel , ésta viene dada por el número de bits utilizados en la conversión analógica en digital.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+NTSC COMITE NACIONAL DE ESTANDARES DE TELEVISION LUMInancia (Y)  Y LA cromuinancuioa (C) 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+								PRIMERA LAPTOP WEBCAM
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+								CAPTURADORA DE FOTOGRAMAS
+
+Un capturador de fotogramas es un dispositivo electrónico que captura (es decir, "toma") fotogramas digitales individuales 
+de una señal de vídeo analógica o un flujo de vídeo digital. Por lo general, se emplea como un componente de un sistema de
+ visión por computadora, en el que los cuadros de video se capturan en forma digital y luego se muestran, almacenan, 
+transmiten, analizan o combinan.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
