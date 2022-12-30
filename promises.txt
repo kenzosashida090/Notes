@@ -1,0 +1,24 @@
+its a value that we expect in the future.
+
+
+a promise as soon as we get back the data is called a resolved promise.
+
+a resolved promise can either be fulfilled or rejected.
+
+get is a promise and to wait for the data we use .then that has a response and we code all that we want to do with
+that promise, but [then] will not handle an error only handle the succesfull response so we use
+another method called [catch]  an error.
+
+Promise()--> constructor takes in a  a so called executer function, which will get called inmidiatly when a promise
+is created.[new Promise((resolve,reject))]
+
+resolve --> the promise is seccessful fulfilled and return the successful value from the promise.
+
+to chain the then methods whe need to return a promise .
+
+when the rejected its trigger the catch error will be executed
+
+///////////////////////////////////////////////////////////////////////
+				ASYNC
+
+Inside async function we can have multiple await functions

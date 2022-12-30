@@ -1,5 +1,12 @@
 Mongo shell is basically just a way for us to be able to interact with our MongoDB databases on our local system using command line
 
+
+To start the server of mongo we type on the terminal
+
+mongod and mongosh in another tab of the terminal to start using the sell to create dbs.
+
+To connect to the mongodb on the cloud we need to create a cluster on the mongodb page
+
 Collection are similar to tables in SQL. They are a collection of documents and a document is simply just a single data record, so that would be 
 a single row if you were using SQL based database
 
@@ -84,3 +91,28 @@ we we crate a node app and need to connect to a mongoDB database there is two wa
 -Use mongodb native driver
 
 -Use ODM Mongoose ---> this is the most popular 
+
+
+/////////////////////////////////////////////////MONGOOSE//////////////////////////////////////////////////////////////
+Mongoose is an Object Data Modeling (ODM) library from mongoDB and Node.js, a higher level of abstraction.
+
+Mongoose allows for rapid and simple development of mongoDB database interaction
+
+Features: schemas to model data and relationships, easy data validation, simplequery API, middleware, etc;
+
+Mongoose schema: Where we model our data, by describing the structure of the data, default values, and validation;
+
+Mongoose model: a wrapper for the schema, providing an interface to the database for CRUD operations.
+
+
+To create a model we also need to create a schema to perform the CRUD operation with the model.
+
+MVC MODEL
+
+Application logic (Controller e.g. tourController.js) 		Business Logic (Model e.g.creating new tours in the database, checking if user's password is correct)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Middleware allows us to interact between the reques and the response can handle errors before it execuites into the web.
+agegators will allow us to interact with the data on the db like adding or the average of some data set a match(a way to find a certain data) and a group
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ERRORS CAN CONSIDERATE AS OPERATIONAL ERRORS (PROBLEMS THAT WE CAN PREDICT) PROGRAMMING ERRORS (DEV ERRORS)
+WE CAN CREATE A GLOBAL ERROR HANDLER TO SEND ALL THE ERRORS TO A SPECIFIC MIDDLEWARE

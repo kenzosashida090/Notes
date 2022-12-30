@@ -1,0 +1,70 @@
+Express is a nodejs framework it will be more easier for us to use express
+
+to use express we create a require and then by standard create a const app to store express().
+
+example
+
+const express = require("express")
+
+const app = express();
+
+TO CREATE A SERVER WE USE 
+const port = 3000;
+
+app.listen(port,()=>{
+
+	console.log(`We are running on port ${port}....`);
+})
+
+to create a response we use app.get and we set the url and the callback function
+
+app.get('/',(req,res)=>{
+
+		res.status(200).json({message:"Hello from the server side",app:"Natours"});
+
+})
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+							THE REST ARCHITECTURE
+
+1.-Separate API into logical resources. Any information that can be named is a resources.
+
+2.-Expose structured,resource-based URLs. The cclient can send a request like: https://www.natours.com/addNewTour
+			
+		[addNewTour is an API ENDPOINT] the endpoint only contain the resources and not the actions
+
+3.-Use HTTP methods (verbs).
+
+
+		/addNewTour  => POST /tours  --> Create The client send information to de database
+
+		/getTour => GET /tours/7 --> Read from the database the tours with the id 7
+
+		/updateTour => PUT or PATCH /tours/7 --> Update an existing tour 
+		
+		/deleteTour => DELETE /tours/7 --> Delete the tour with the id 7
+		
+
+4.-Send data as JSON (usally)
+
+5.- Be stateless --> The server will not remember the previous request. The client will set the state(information)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+							MIDDLEWARES
+
+To post we need to set a middleware, its an space between the request and the response will process the information
+and add to the body because express doesnt do that. 
+
+The middleware 
+
+app.use(express.json())
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+						ENVIORMENT VARIABLES
+
+We can create an env variable on the console just tapping
+
+		NODE_ENV = development nodemon server.js
+or creating a file config.env
